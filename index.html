@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="homepage/styles.css" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=Baloo"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/earlyaccess/droidarabickufi.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="fonts/burble-vp.style-2.otf"
+        />
+        <script src="https://use.fontawesome.com/dbb72ac4f9.js"></script>
+    </head>
+    <body>
+        <div class="preloader">
+            <div class="dna" id="dna-container"></div>
+
+            <script>
+                var dnaContainer = document.getElementById("dna-container");
+
+                for (var i = 0; i < 60; i++) {
+                    var eleDiv = document.createElement("div");
+                    eleDiv.className = "ele";
+
+                    var dotDiv = document.createElement("div");
+                    dotDiv.className = "dot";
+
+                    eleDiv.appendChild(dotDiv);
+                    dnaContainer.appendChild(eleDiv);
+                }
+            </script>
+        </div>
+        <script>
+            function hidePreloader() {
+                setTimeout(function () {
+                    document.querySelector(".preloader").style.display = "none";
+                    document.querySelector(".main-content").style.display =
+                        "block";
+                    document.body.style.overflow = "visible";
+                }, 2000);
+            }
+
+            window.addEventListener("load", hidePreloader);
+        </script>
+        <header class="cd-header">
+            <div class="header-wrapper">
+                <div class="nav-but-wrap">
+                    <div class="menu-icon hover-target">
+                        <span
+                            class="menu-icon__line menu-icon__line-left"
+                        ></span>
+                        <span class="menu-icon__line"></span>
+                        <span
+                            class="menu-icon__line menu-icon__line-right"
+                        ></span>
+                        <span
+                            class="menu-icon__line menu-icon__line-close"
+                        ></span>
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="nav__content">
+                    <ul class="nav__list">
+                        <li class="nav__list-item active-nav">
+                            <a
+                                href="index.html"
+                                class="hover-target"
+                                id="home-link"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a
+                                href="pagethree/index.html"
+                                class="hover-target"
+                                id="findDoctor-link"
+                                >Find a doctor</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a
+                                href="pagetwo/index.html"
+                                class="hover-target"
+                                id="aiDiagnose-link"
+                                >AI Diagnose</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a
+                                href="pagethree/index.html"
+                                class="hover-target"
+                                id="warning-link"
+                                >Warning</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a
+                                href="pagethree/index.html"
+                                class="hover-target"
+                                id="nearYou-link"
+                                >Near you</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="homepage/logo.png" alt="Logo" />
+            </div>
+
+            <div class="tagline" id="home">
+                <p id="tagline-text">We care about you</p>
+
+                <div class="tagline">
+                    <div class="auth-buttons">
+                        <button class="login-btn" id="login">Login</button>
+                        <button class="signup-btn" id="signup">Sign Up</button>
+                    </div>
+                    <script>
+                        const loginButton =
+                            document.querySelector(".login-btn");
+                        const signupButton =
+                            document.querySelector(".signup-btn");
+                        loginButton.addEventListener("click", () => {
+                            window.location.href = "homepage/login.html";
+                        });
+
+                        signupButton.addEventListener("click", () => {
+                            window.location.href = "homepage/login.html";
+                        });
+                    </script>
+
+                    <div class="buttons">
+                        <div id="findDoctor" class="buttonBox">
+                            <button
+                                onclick="window.location.href='pagethree/index.html'"
+                                id="findDoctor-button"
+                            >
+                                Find a Doctor
+                            </button>
+                        </div>
+                        <div id="aiDiagnose" class="buttonBox">
+                            <button
+                                onclick="window.location.href='pagetwo/index.html'"
+                                id="aiDiagnose-button"
+                            >
+                                Ai Diagnose
+                            </button>
+                        </div>
+                        <div id="warning" class="buttonBox">
+                            <button
+                                onclick="window.location.href='pagethree/index.html'"
+                                id="warning-button"
+                            >
+                                Warning
+                            </button>
+                        </div>
+                        <div id="nearYou" class="buttonBox">
+                            <button
+                                onclick="window.location.href='pagethree/index.html'"
+                                id="nearYou-button"
+                            >
+                                Near you
+                            </button>
+                        </div>
+                        <div class="dropdown" tabindex="0">
+                            <button id="dropdown-btn"></button>
+                            <ul
+                                class="dropdown-content"
+                                id="dropdown-content"
+                            ></ul>
+                        </div>
+                        <script src="homepage/transl.js"></script>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="video-overlay">
+            <video id="overlayVideo" autoplay loop muted>
+                <source src="homepage/overlayVideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <button
+                id="videoControlBtn"
+                class="video-control-btn"
+                aria-label="Video Control Button"
+            ></button>
+        </div>
+
+        <section class="content-section-one">
+            <div class="box">
+                <p id="section1-text">
+                    Beginning of the healing For the first time, the right
+                    responses Having the correct diagnosis is essential for
+                    effective treatment. The most difficult medical problems are
+                    diagnosed and treated by our medical professionals.
+                </p>
+                <p class="impP" id="section1-imp">
+                    For the first time Ai med Clinic in Egypt
+                </p>
+            </div>
+            <div class="photo"></div>
+        </section>
+        <script>
+            const section1Text = document.getElementById("section1-text");
+            const section1Imp = document.getElementById("section1-imp");
+            let animationTriggered = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !animationTriggered) {
+                        section1Text.classList.add("visible");
+                        section1Imp.classList.add("visible");
+                        animationTriggered = true;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            observer.observe(section1Text);
+            observer.observe(section1Imp);
+        </script>
+        <script>
+            const photo = document.querySelector(".photo");
+            let photoAnimationTriggered = false;
+
+            const observerPhoto = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !photoAnimationTriggered) {
+                        photo.classList.add("visible");
+                        photoAnimationTriggered = true;
+                        observerPhoto.disconnect();
+                    }
+                });
+            });
+
+            observerPhoto.observe(photo);
+        </script>
+        <section class="content-section-two">
+            <div class="box">
+                <p class="impP" id="section2-imp">
+                    Ai diagnostic analyzer <br />
+                </p>
+                <p id="section2-text">
+                    With the use of this AI diagnostic analyzer, doctors can
+                    quickly and accurately diagnose clients. Additionally, it
+                    gives users the option to input their symptoms and get a
+                    real-time diagnosis, allowing them to take control of their
+                    health without waiting for a doctor's evaluation.
+                </p>
+            </div>
+            <div class="photo"></div>
+        </section>
+        <script>
+            const section2Imp = document.getElementById("section2-imp");
+            const section2Text = document.getElementById("section2-text");
+            let section2AnimationTriggered = false;
+
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !section2AnimationTriggered) {
+                        section2Imp.classList.add("visible");
+                        section2Text.classList.add("visible");
+                        section2AnimationTriggered = true;
+                        observer2.unobserve(entry.target);
+                    }
+                });
+            });
+
+            observer2.observe(section2Imp);
+            observer2.observe(section2Text);
+        </script>
+        <script>
+            const photo2 = document.querySelector(
+                ".content-section-two .photo"
+            );
+            let photo2AnimationTriggered = false;
+
+            const observerPhoto2 = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !photo2AnimationTriggered) {
+                        photo2.classList.add("visible");
+                        photo2AnimationTriggered = true;
+                        observerPhoto2.disconnect();
+                    }
+                });
+            });
+
+            observerPhoto2.observe(photo2);
+        </script>
+
+        <section class="grid-section">
+            <header>
+                <h2 id="toolsHeader">
+                    Tools, Trackers &amp; Calculators
+                    <hr />
+                </h2>
+                <hr class="black-line" />
+            </header>
+            <div class="grid-container">
+                <div class="grid-item1">
+                    <a
+                        href="bmicalculator/bmiIndex.html"
+                        data-metrics-link="1"
+                        class="module-list-link"
+                    >
+                        <div class="image-container">
+                            <img
+                                src="homepage/bmi.png"
+                                alt="BMI Calculator Tool"
+                                class="module-list-image"
+                            />
+                        </div>
+                        <h3 class="module-list-title" id="bmi-title">
+                            BMI Calculator
+                        </h3>
+                    </a>
+                </div>
+                <div class="grid-item2">
+                    <a
+                        href="ovulationcalculator/index.html"
+                        data-metrics-link="1"
+                        class="module-list-link"
+                    >
+                        <div class="image-container">
+                            <img
+                                src="homepage/oc.png"
+                                alt="Ovulation Calculator Tool"
+                                class="module-list-image"
+                            />
+                        </div>
+                        <h3 class="module-list-title" id="ovulation-title">
+                            Ovulation Calculator
+                        </h3>
+                    </a>
+                </div>
+                <div class="grid-item3">
+                    <a
+                        href="pregnancycalculator/index.html"
+                        data-metrics-link="1"
+                        class="module-list-link"
+                    >
+                        <div class="image-container">
+                            <img
+                                src="homepage/pc.png"
+                                alt="Pregnancy Calendar Calculator"
+                                class="module-list-image"
+                            />
+                        </div>
+                        <h3 class="module-list-title" id="pregnancy-title">
+                            Pregnancy Calendar
+                        </h3>
+                    </a>
+                </div>
+                <div class="grid-item4">
+                    <a
+                        href="thyroidfunction/index.html"
+                        data-metrics-link="1"
+                        class="module-list-link"
+                    >
+                        <div class="image-container">
+                            <img
+                                src="homepage/tf.png"
+                                alt="Thyroid Function Tool"
+                                class="module-list-image"
+                            />
+                        </div>
+                        <h3 class="module-list-title" id="thyroid-title">
+                            Thyroid Function
+                        </h3>
+                    </a>
+                </div>
+                <div class="grid-item5">
+                    <a
+                        href="completebloodcount/index.html"
+                        data-metrics-link="1"
+                        class="module-list-link"
+                    >
+                        <div class="image-container">
+                            <img
+                                src="homepage/cpc.png"
+                                alt="Complete Blood Count Tool"
+                                class="module-list-image"
+                            />
+                        </div>
+                        <h3 class="module-list-title" id="bloodCount-title">
+                            Complete Blood Count
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <script>
+            const gridtems = document.querySelectorAll(
+                ".grid-item1, .grid-item2, .grid-item3, .grid-item4, .grid-item5"
+            );
+            let gridAnimationTriggered = false;
+
+            const observerGrid = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !gridAnimationTriggered) {
+                        gridtems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add("visible");
+                            }, index * 200);
+                        });
+                        gridAnimationTriggered = true;
+                        observerGrid.disconnect();
+                    }
+                });
+            });
+
+            observerGrid.observe(document.querySelector(".grid-container"));
+        </script>
+        <section class="new-section">
+            <div
+                class="box1"
+                onclick="window.location.assign('pagethree/index.html')"
+                style="cursor: pointer"
+            >
+                <div class="image-container">
+                    <img src="homepage/doctorIcon.png" alt="Doctor Icon" />
+                </div>
+                <p id="findDoctor-text">Find a doctor</p>
+            </div>
+            <div
+                class="box2"
+                onclick="window.location.href='pagethree/index.html'"
+                style="cursor: pointer"
+            >
+                <div class="image-container">
+                    <img src="homepage/reminderIcon.png" alt="Reminder Icon" />
+                </div>
+                <p id="scheduleAppt-text">Schedule an appointment</p>
+            </div>
+            <div
+                class="box3"
+                onclick="window.location.assign('pagetwo/index.html')"
+                style="cursor: pointer"
+            >
+                <div class="image-container">
+                    <img src="homepage/aiIcon.png" alt="AI Icon" />
+                </div>
+                <p id="aiDiagnose-text">Ai diagnose</p>
+            </div>
+            <div
+                class="box4"
+                onclick="window.location.assign('pagethree/index.html')"
+                style="cursor: pointer"
+            >
+                <div class="homepage/image-container">
+                    <img src="homepage/contactIcon.png" alt="Contact Icon" />
+                </div>
+                <p id="findChart-text">Find your Chart</p>
+            </div>
+        </section>
+        <script>
+            const newSectionBoxes = document.querySelectorAll(
+                ".new-section .box1, .new-section .box2, .new-section .box3, .new-section .box4"
+            );
+            let newSectionAnimationTriggered = false;
+
+            const observerNewSection = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !newSectionAnimationTriggered) {
+                        newSectionBoxes.forEach((box, index) => {
+                            setTimeout(() => {
+                                box.classList.add("visible");
+                            }, index * 200);
+                        });
+                        newSectionAnimationTriggered = true;
+                        observerNewSection.disconnect();
+                    }
+                });
+            });
+
+            observerNewSection.observe(document.querySelector(".new-section"));
+        </script>
+        <div class="lastimgs">
+            <img src="homepage/footerPhoto.png" alt="Footer Photo" />
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <div>
+                            <img src="homepage/logo.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>
+                                <a href="pageThree/index.html">Find A Doctor</a>
+                            </li>
+                            <li>
+                                <a href="pageTwo/index.html">AI Diagnose</a>
+                            </li>
+                            <li><a href="pageThree/index.html">Warning</a></li>
+                            <li><a href="pageThree/index.html">Near You</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>News</h4>
+                        <ul>
+                            <li><a id="newsLink" href="#news">News</a></li>
+                        </ul>
+                    </div>
+                    <script>
+                        const newsLink = document.getElementById("newsLink");
+
+                        newsLink.addEventListener("click", function (event) {
+                            event.preventDefault();
+
+                            window.location.href = "pagethree/index.html#News";
+                        });
+                    </script>
+                    <div class="footer-col">
+                        <h4>follow us</h4>
+                        <div class="border1">
+                            <ul>
+                                <li>
+                                    <i
+                                        class="fa fa-phone"
+                                        aria-hidden="true"
+                                    ></i
+                                    >01275383309
+                                </li>
+                                <li id="emailButton">
+                                    <i
+                                        class="fa fa-envelope"
+                                        aria-hidden="true"
+                                    ></i
+                                    >aimedsolver@gmail.com
+                                </li>
+                            </ul>
+                            <script>
+                                const emailButton =
+                                    document.getElementById("emailButton");
+
+                                emailButton.addEventListener(
+                                    "click",
+                                    function () {
+                                        window.location.href =
+                                            "mailto:aimedsolver@gmail.com";
+                                    }
+                                );
+                            </script>
+                        </div>
+                        <div class="social-links">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=100094980720849"
+                                ><i
+                                    class="fa fa-facebook"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                            <a href="#"
+                                ><i class="fa fa-twitter" aria-hidden="true"></i
+                            ></a>
+                            <a href="#"
+                                ><i
+                                    class="fa fa-linkedin"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                            <a href="https://www.instagram.com/myaso.ai/"
+                                ><i
+                                    class="fa fa-instagram"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="homepage/script.js"></script>
+        <script src="homepage/translation.js"></script>
+    </body>
+</html>

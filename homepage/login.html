@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="loginStyle.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="loginScript.js"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu:400,500"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="background">
+                <div class="left">
+                    <h2 class="back-header">Dont have an account yet?</h2>
+                    <p class="back-p">
+                        Well doggonit you should sign up today!
+                    </p>
+                    <button class="back-btn signup-but">SIGN UP</button>
+                </div>
+                <div class="right">
+                    <h2 class="back-header">Do you already have an account?</h2>
+                    <p class="back-p">Well doggonit let's get you logged in!</p>
+                    <button class="back-btn login-but">LOGIN</button>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="sign-up">
+                    <h2 class="form-header">SIGN UP</h2>
+                    <div class="input-container">
+                        <input
+                            type="text"
+                            id="user"
+                            placeholder="Enter Full Name"
+                            required
+                        />
+                        <i class="fa fa-user"></i>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="input-container">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email"
+                            required
+                        />
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="input-container">
+                        <input
+                            type="password"
+                            id="pass"
+                            placeholder="Password"
+                            required
+                        />
+                        <i class="fa fa-lock"></i>
+                        <div class="error-message"></div>
+                    </div>
+                    <button class="form-btn">SIGN UP</button>
+                </div>
+                <div class="login hide">
+                    <h2 class="form-header">LOGIN</h2>
+                    <div class="input-container">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email"
+                            required
+                        />
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="input-container">
+                        <input
+                            type="password"
+                            id="pass"
+                            placeholder="Password"
+                            required
+                        />
+                        <i class="fa fa-lock"></i>
+                        <div class="error-message"></div>
+                    </div>
+                    <button class="form-btn">LOGIN</button>
+                    <a class="forgot" href="#">Forgot password</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
