@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/earlyaccess/droidarabickufi.css' rel='stylesheet'>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://use.fontawesome.com/dbb72ac4f9.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
+
+
+</head>
+<body>
+  <div class="preloader">
+    <div class="dna" id="dna-container">
+    </div>
+  
+    <script>
+      var dnaContainer = document.getElementById("dna-container");
+  
+      for (var i = 0; i < 60; i++) {
+        var eleDiv = document.createElement("div");
+        eleDiv.className = "ele";
+  
+        var dotDiv = document.createElement("div");
+        dotDiv.className = "dot";
+  
+        eleDiv.appendChild(dotDiv);
+        dnaContainer.appendChild(eleDiv);
+      }
+    </script>
+    
+  
+  </div>
+  <script>
+    function hidePreloader() {
+      setTimeout(function() {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+        document.body.style.overflow = 'visible';
+      }, 800);
+    }
+
+    window.addEventListener('load', hidePreloader);
+  </script>
+    <header class="top-bar cd-header">
+         <div class="header-wrapper">
+      <div class="nav-but-wrap">
+        <div class="menu-icon hover-target">
+          <span class="menu-icon__line menu-icon__line-left"></span>
+          <span class="menu-icon__line"></span>
+          <span class="menu-icon__line menu-icon__line-right"></span>
+          <span class="menu-icon__line menu-icon__line-close"></span> 
+        </div>
+      </div>
+    </div>
+        <div class="left-side">
+            <div class="paragraphs">
+                <p id="title">Ai diagnostic analyzer</p>
+                <p id="subtitle">Complete AI detection</p>
+                <p id="share-text">Share</p>
+            </div>
+            <div class="social-media">
+
+<div class='buttons-container'>
+  <div class='button facebook'>
+    <i class="fab fa-facebook-f fa-2x"></i>
+  </div>
+  <div class='button twitter'>
+    <i class="fab fa-twitter fa-2x"></i>
+  </div>
+  <div class='button instagram'>
+    <i class="fab fa-instagram fa-2x"></i>
+  </div>
+  <div class='button whatsapp'>
+    <i class="fab fa-whatsapp fa-2x"></i>
+  </div>
+  <div class='button snapchat'>
+    <i class="fab fa-snapchat-ghost fa-2x"></i>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const shareOnFacebook = () => {
+      const url = 'https://ai-med-solver.netlify.app';
+      const encodedUrl = encodeURIComponent(url);
+      const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+      window.open(shareUrl, '_blank');
+    };
+
+    const shareOnTwitter = () => {
+      const url = 'https://ai-med-solver.netlify.app';
+      const encodedUrl = encodeURIComponent(url);
+      const shareText = 'Check out this awesome website!';
+      const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodedUrl}`;
+      window.open(shareUrl, '_blank');
+    };
+
+    const openInstagramProfile = () => {
+      window.open('https://www.instagram.com/', '_blank');
+    };
+
+    const shareOnWhatsApp = () => {
+      const url = 'https://ai-med-solver.netlify.app';
+      const encodedUrl = encodeURIComponent(url);
+      const shareText = 'Check out this awesome website: ';
+      const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}${encodedUrl}`;
+      window.open(shareUrl, '_blank');
+    };
+
+    const openSnapchatProfile = () => {
+      window.open('https://www.snapchat.com/', '_blank');
+    };
+
+    document.querySelector('.facebook').addEventListener('click', shareOnFacebook);
+    document.querySelector('.twitter').addEventListener('click', shareOnTwitter);
+    document.querySelector('.instagram').addEventListener('click', openInstagramProfile);
+    document.querySelector('.whatsapp').addEventListener('click', shareOnWhatsApp);
+    document.querySelector('.snapchat').addEventListener('click', openSnapchatProfile);
+  });
+</script>
+
+<div class="dropdown" tabindex="0">
+  <button id="dropdown-btn"></button>
+  <ul class="dropdown-content" id="dropdown-content"></ul>
+</div>
+<script src="script.js"></script>
+            </div>
+        </div>
+         <div class="photo">
+            <img src="firstPhoto.png" alt="First Photo">
+        </div>
+    </div>
+</header>
+  <div class="nav">
+    <div class="nav__content">
+      <ul class="nav__list">
+        <li class="nav__list-item active-nav"><a href="../index.html" class="hover-target" id="home-link">Home</a></li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="findDoctor-link">Find a doctor</a></li>
+        <li class="nav__list-item"><a href="../pagetwo/index.html" class="hover-target" id="aiDiagnose-link">AI Diagnose</a></li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="warning-link">Warning</a></li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="nearYou-link">Near you</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="rtl-container">
+
+    <div class="new-section">
+            <div class="new-paragraphs">
+                <p id="how-to-use">" How can you use it? "</p>
+                <p id="Use-description">The patient's pictures and any medical information must be uploaded.</p>
+                <p id="diagnose-1">The AI will diagnose and analyze, and then deliver the findings to you.</p>
+                <p id="diagnose-2">The results will contain information on the disorder if any, as well as any associated health risks.</p>
+                <p id="diagnose-3">Please call us if you have any questions.</p>
+            </div>
+    </div>
+
+    <div class="new-section">
+            <div class="new-paragraphs">
+                <p id="how-can-help">" How can it help you? "</p>
+                <p id="help-description">Our AI medical diagnosis is designed to help doctors diagnose and classify illnesses and conditions more quickly.</p>
+                <p id="help-1">Our technology can analyze symptoms, medical history, and relevant data using artificial intelligence to deliver accurate information and allow individual treatment plans.</p>
+                <p id="help-2">Additionally, it can examine medical images like X-rays and CT scans to help find issues.</p>
+                <p id="help-3">Patients gain from customized health information, early disease detection, and proactive well-being management.</p>
+                <p id="help-4">We are committed to enhancing healthcare by using AI to improve diagnosis, treatment, and empowerment for both healthcare professionals and patients.</p>
+            </div>
+    </div>
+    <div class = "sect">
+    <section class="new-section0">
+      <div class="box1" onclick="window.location.assign('https://aimedsolver-cruwusf9xdaqbtyzxkhyrn.streamlit.app/')" style="cursor: pointer;">
+        <div class="image-container">
+          <img src="firsttIcon.svg" alt="AI Icon">
+        </div>
+        <p id="AI1">Analyzes</p>
+      </div>
+      <div class="box2" onclick="window.location.assign('http://13.51.206.187:8501/')" style="cursor: pointer;">
+        <div class="image-container">
+          <img src="seconddIcon.svg" alt="AI Icon">
+        </div>
+        <p id="AI2">MRI</p>
+      </div>
+    </section>
+  </div>
+  <script>
+    const newSectionBoxes = document.querySelectorAll(".new-section0 .box1, .new-section0 .box2");
+    let newSectionAnimationTriggered = false;
+
+    const observerNewSection = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !newSectionAnimationTriggered) {
+          newSectionBoxes.forEach((box, index) => {
+            setTimeout(() => {
+              box.classList.add("visible");
+            }, index * 200); 
+          });
+          newSectionAnimationTriggered = true;
+          observerNewSection.disconnect(); 
+        }
+      });
+    });
+
+    observerNewSection.observe(document.querySelector(".new-section0"));
+  </script>
+    <div class="new-section-and-photos">
+        <div class="new-section2">
+            <div class="new-paragraphs2">
+                <p id="tips-heading">Tips for staying healthier</p>
+                <ol class="tips-list">
+                    <li id="tip1">Stay active: Engage in regular physical activity to keep your weight in check, boost your energy levels, and promote overall well-being.</li>
+                    <li id="tip2">Eat a balanced diet: Include a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats in your meals. Limit processed foods and sugary snacks.</li>
+                    <li id="tip3">Get enough sleep: Aim for 7-9 hours of quality sleep each night to support your immune system, improve concentration, and enhance mood.</li>
+                    <li id="tip4">Practice good hygiene: Wash your hands frequently, cover your mouth when coughing or sneezing, and maintain cleanliness in your surroundings.</li>
+                    <li id="tip5">Schedule regular check-ups: Visit your healthcare provider for routine check-ups, screenings, and vaccinations to stay on top of your health and detect any potential issues early.</li>
+                </ol>
+            </div>
+            <div class="photo-container">
+                <img src="photo1.png" alt="Photo 1">
+                <img src="photo2.png" alt="Photo 2">
+            </div>
+        </div>
+    </div>
+
+    <div class="new-section">
+        <div class="new-paragraphs">
+        <p id="analysis-heading">" What should I do with the analysis? "</p>
+        <p id="analysis-description">You should use the analysis to empower yourself and learn more about your results, but not to diagnose yourself with a thyroid-related condition</p>
+    </div>
+
+    </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="footer-col">
+                  <div>
+                      <img src="../homepage/logo.png" alt="" />
+                  </div>
+              </div>
+              <div class="footer-col">
+                  <h4>Quick Links</h4>
+                  <ul>
+                      <li><a href="../index.html">Home</a></li>
+                      <li>
+                          <a href="../pageThree/index.html">Find A Doctor</a>
+                      </li>
+                      <li>
+                          <a href="../pageTwo/index.html">AI Diagnose</a>
+                      </li>
+                      <li><a href="../pageThree/index.html">Warning</a></li>
+                      <li><a href="../pageThree/index.html">Near You</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>News</h4>
+                  <ul>
+                    <li><a id="newsLink" href="#news">News</a></li>
+                  </ul>
+              </div>
+              <script>
+                const newsLink = document.getElementById("newsLink");
+
+                newsLink.addEventListener("click", function (event) {
+                    event.preventDefault(); 
+
+                    window.location.href = "../pagethree/index.html#News";
+                });
+            </script>
+              <div class="footer-col">
+                  <h4>follow us</h4>
+                  <div class="border1">
+                      <ul>
+                          <li>
+                              <i
+                                  class="fa fa-phone"
+                                  aria-hidden="true"
+                              ></i
+                              >01275383309
+                          </li>
+                          <li id="emailButton">
+                            <i
+                                  class="fa fa-envelope"
+                                  aria-hidden="true"
+                              ></i
+                              >aimedsolver@gmail.com
+                          </li>
+                      </ul>
+                      <script>
+                        const emailButton = document.getElementById("emailButton");
+                
+                        emailButton.addEventListener("click", function() {
+                            window.location.href = "mailto:aimedsolver@gmail.com";
+                        });
+                    </script>
+                
+                  </div>
+                  <div class="social-links">
+                      <a
+                          href="https://www.facebook.com/profile.php?id=100094980720849"
+                          ><i
+                              class="fa fa-facebook"
+                              aria-hidden="true"
+                          ></i
+                      ></a>
+                      <a href="#"
+                          ><i class="fa fa-twitter" aria-hidden="true"></i
+                      ></a>
+                      <a href="#"
+                          ><i
+                              class="fa fa-linkedin"
+                              aria-hidden="true"
+                          ></i
+                      ></a>
+                      <a href="https://www.instagram.com/myaso.ai/"
+                          ><i
+                              class="fa fa-instagram"
+                              aria-hidden="true"
+                          ></i
+                      ></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+
+
+    <script src="script.js"></script>
+    <script src="transl.js"></script>
+
+</body>
+</html>
