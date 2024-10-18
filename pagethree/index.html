@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/earlyaccess/droidarabickufi.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://use.fontawesome.com/dbb72ac4f9.js"></script>
+
+
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="dna" id="dna-container">
+    </div>
+  
+    <script>
+      var dnaContainer = document.getElementById("dna-container");
+  
+      for (var i = 0; i < 60; i++) {
+        var eleDiv = document.createElement("div");
+        eleDiv.className = "ele";
+  
+        var dotDiv = document.createElement("div");
+        dotDiv.className = "dot";
+  
+        eleDiv.appendChild(dotDiv);
+        dnaContainer.appendChild(eleDiv);
+      }
+    </script>
+    
+  
+  </div>
+  <script>
+    function hidePreloader() {
+      setTimeout(function() {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+        document.body.style.overflow = 'visible';
+      }, 800);
+    }
+
+    window.addEventListener('load', hidePreloader);
+  </script>
+  <header class="cd-header">
+    <div class="header-wrapper">
+      <div class="nav-but-wrap">
+        <div class="menu-icon hover-target">
+          <span class="menu-icon__line menu-icon__line-left"></span>
+          <span class="menu-icon__line"></span>
+          <span class="menu-icon__line menu-icon__line-right"></span>
+          <span class="menu-icon__line menu-icon__line-close"></span> 
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+
+    <div class="tagline">
+      <p id="tagline-text">We care about you</p>
+      <div class="tagline">
+        <div class="buttons">
+          <div id="findDoctor" class="buttonBox">
+            <button id="finddoctor" onclick="window.location.href='../pagethree/index.html'">Find a Doctor</button>
+          </div>
+          <div id="aiDiagnose" class="buttonBox">
+            <button id="aidiagnose" onclick="window.location.href='../pagetwo/index.html'">Ai Diagnose</button>
+          </div>
+          <div id="warning" class="buttonBox">
+            <button id="Warning" onclick="window.location.href='../pagethree/index.html'">Warning</button>
+          </div>
+          <div id="nearYou" class="buttonBox">
+            <button id="nearyou" onclick="window.location.href='../pagethree/index.html'">Near you</button>
+          </div>
+          <div class="dropdown" tabindex="0">
+            <button id="dropdown-btn"></button>
+            <ul class="dropdown-content" id="dropdown-content"></ul>
+          </div>
+          <script src="transl.js"></script>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav">
+    <div class="nav__content">
+      <ul class="nav__list">
+        <li class="nav__list-item active-nav"><a href="../index.html" class="hover-target" id="home-link">Home</a></li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="findDoctor-link">Find a
+            doctor</a></li>
+        <li class="nav__list-item"><a href="../pagetwo/index.html" class="hover-target" id="aiDiagnose-link">AI
+            Diagnose</a></li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="warning-link">Warning</a>
+        </li>
+        <li class="nav__list-item"><a href="../pagethree/index.html" class="hover-target" id="nearYou-link">Near you</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="new-section">
+    <div class="button-container">
+      <div class="button-box active" onclick="changeTab(0)">
+        <img src="Doctors Icon.svg" alt="Doctors Icon">
+        <p id="tabOne-text">Find a Doctor</p>
+      </div>
+      <div class="button-box" onclick="changeTab(1)">
+        <img src="Clinics Icon.svg" alt="Clinics Icon">
+        <p id="tabTwo-text">Near Hospitals and Pharmacy</p>
+      </div>
+      <div class="button-box" onclick="changeTab(2)">
+        <img src="Conditions Icon.svg" alt="Conditions Icon">
+        <p id="tabThree-text">Appointment</p>
+      </div>
+      <div class="button-box" onclick="changeTab(3)">
+        <img src="warning.png" alt="Warning Icon">
+        <p id="tabFour-text">Warning</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabOne">
+      <div class="section-content">
+
+
+        <h5 id="tabOne-heading">Looking for</h5>
+        <h1 id="tabOne-heading2">Find Doctors and Dentists Near You</h1>
+      </div>
+      <div class="headings">
+
+        <form class="custom-form">
+          <div class="form-row">
+            <div class="search-box">
+              <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+              <form action="" class="search-form">
+                <input type="text" placeholder="Search doctors" id="search" autocomplete="off">
+              </form>
+              <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+                x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;" xml:space="preserve">
+                <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280" />
+                <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280" />
+              </svg>
+              <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+            </div>
+          </div>
+          <p id ="search-paragraph"> You can also search by physician, practice, or hospital name </p>
+        </form>
+        <div id="bu-container">
+<button class="book">
+  <span class="circle" aria-hidden="true">
+    <span class="icon arrow"></span>
+  </span>
+  <span class="button-text" id = "bu-text">book an appointment</span>
+</button>
+
+<script>
+  const button = document.querySelector(".book");
+
+  button.addEventListener("click", function() {
+    window.location.href = "../findadoctor/index.html";
+  });
+</script>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="tab-pane tabTwo">
+      <div class="section-content">
+        <h3 id="tabTwo-heading">Looking for</h3>
+        <form class="custom-form">
+          <div class="form-row">
+            <p class="section-paragraph" id="clinicOrPharmacy-text">Clinic or Pharmacy</p>
+            <select name="medical-facility" required>
+              <option value="clinic" id="clinic-option">Clinic</option>
+              <option value="pharmacy" id="pharmacy-option">Pharmacy</option>
+            </select>
+          </div>
+        </form>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.336634918836!2d31.29966387284186!3d30.059556316608557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2z2KfZhNmC2KfZh9ix2KnYjCDZhdit2KfZgdi42Kkg2KfZhNmC2KfZh9ix2KnigKw!5e0!3m2!1sar!2seg!4v1690413526491!5m2!1sar!2seg"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="tab-pane tabThree">
+      <div class="section-content">
+        <div class="custom-form" style="margin: 0 0px; padding: 15px; height: fit-content;">
+          <div class="form-row">
+            <p class="section-paragraph" id="specialty-text">What specialty are you looking for?</p>
+            <select name="Medical-specialty" required style="width: 57%;" id="specialty">
+              <option value="cardiology" id="cardiology-option">Cardiology</option>
+              <option value="dermatology" id="dermatology-option">Dermatology</option>
+              <option value="endocrinology" id="endocrinology-option">Endocrinology</option>
+              <option value="gastroenterology" id="gastroenterology-option">Gastroenterology</option>
+              <option value="neurology" id="neurology-option">Neurology</option>
+              <option value="oncology" id="oncology-option">Oncology</option>
+              <option value="pediatrics" id="pediatrics-option">Pediatrics</option>
+              <option value="psychiatry" id="psychiatry-option">Psychiatry</option>
+              <option value="radiology" id="radiology-option">Radiology</option>
+              <option value="surgery" id="surgery-option">Surgery</option>
+            </select>
+            <p class="section-paragraph" id="kindAppointment-text">What kind of appointment are you scheduling?</p>
+            <select name="kind-appointment" required style="width: 57%;" id="appointment">
+              <option value="physical" id="physical-option">Physical</option>
+              <option value="virtual" id="virtual-option">Virtual</option>
+            </select>
+          </div>
+
+          <div id="tablesContainer" style="display: none;">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th id="chooseDoctor-heading">Choose Doctor</th>
+                  </tr>
+                </thead>
+                <tbody id="doctorNamesBody">
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th id="calendar-heading">Calendar</th>
+                  </tr>
+                </thead>
+                <tbody id="availabilityBody">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <button type="submit" onclick="getDoctorAvailability()" id="bookAppointment-button">Book an
+            appointment</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane tabFour">
+      <div class="section-content">
+        <form class="custom-form">
+          <div class="form-row">
+            <p class="section-paragraph" id="smartwatchQuestion-text">Do you have a smartwatch?</p>
+            <div class="radio-group">
+              <input type="radio" id="yes" name="smartwatch" value="yes" id="yes-option">
+              <label for="yes" id="yes-label">Yes</label>
+              <input type="radio" id="no" name="smartwatch" value="no" id="no-option">
+              <label for="no" id="no-label">No</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <p class="section-paragraph" id="warnSign-text">You can send warn sign if you are in danger</p>
+            <button role="button" class="warning" id="warning-button">Warning</button>
+          </div>
+          <button class="transparent-button" id="downloadApp-button">Download our app and connect your
+            smartwatch</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="box-container">
+      <div class="box-donate">
+        <div class="left-box" id="leftBox">
+          <p id="lifesaver-text1">Be a Lifesaver</p>
+          <p id="lifesaver-text2"> Donate Blood and Make a Difference Today!</p>
+          <div class="image-wrapper" id="bloodPhoto">
+            <img src="donate blood.png" alt="Donate Blood">
+          </div>
+          <p class="donate-text" id="donateCheckup-text">Donate and take a free checkup :)</p>
+        </div>
+      </div>
+      <script>
+        function animateElement(element, delay) {
+          const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.2,
+          };
+      
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.classList.add("visible");
+                }, delay);
+                observer.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+      
+          observer.observe(element);
+        }
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          animateElement(document.getElementById("lifesaver-text1"), 0);
+      
+          animateElement(document.getElementById("lifesaver-text2"), 200);
+      
+          animateElement(document.getElementById("bloodPhoto"), 400);
+      
+          animateElement(document.getElementById("donateCheckup-text"), 600);
+        });
+      </script>
+      <div class="news" id = "News">
+        <h2 id="news-heading">News</h2>
+        <div id="news-container">
+          <script>
+            async function fetchNews() {
+              const apiUrl =
+                "https://gnews.io/api/v4/top-headlines?country=us&category=health&apikey=e9d5ed7f806e8f04d4ef77ad22c98ce4";
+        
+              try {
+                let data = localStorage.getItem("healthNewsData");
+                const lastFetchTime = localStorage.getItem("healthNewsFetchTime");
+        
+                if (data && lastFetchTime && Date.now() - lastFetchTime <= 30 * 60 * 1000) {
+                  data = JSON.parse(data);
+                } else {
+                  const response = await fetch(apiUrl);
+                  data = await response.json();
+        
+                  localStorage.setItem("healthNewsData", JSON.stringify(data));
+                  localStorage.setItem("healthNewsFetchTime", Date.now());
+                }
+        
+                const articles = data.articles;
+        
+                document.getElementById("news-container").innerHTML = "";
+        
+                articles.forEach((article, index) => {
+                  const newsItem = `
+                    <div class="news-item ${index % 2 === 0 ? "slide-left" : "slide-right"}">
+                      <img src="${article.image}" alt="${article.title}">
+                      <div class="text-container">
+                        <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                        <p>${article.description}</p>
+                      </div>
+                    </div>
+                  `;
+                  document.getElementById("news-container").insertAdjacentHTML("beforeend", newsItem);
+                });
+        
+                animateNewsItems();
+              } catch (error) {
+                console.error("Error fetching news:", error);
+              }
+            }
+        
+            function animateNewsItems() {
+              const newsItems = document.querySelectorAll(".news-item");
+              const h2Elements = document.querySelectorAll("#news-container h2");
+              const pElements = document.querySelectorAll("#news-container p");
+        
+              const observerOptions = {
+                root: null, 
+                rootMargin: "0px",
+                threshold: 0.2, 
+              };
+        
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); 
+                  }
+                });
+              }, observerOptions);
+        
+              newsItems.forEach((item) => {
+                observer.observe(item);
+              });
+        
+
+              h2Elements.forEach((h2Element) => {
+                observer.observe(h2Element);
+              });
+        
+              pElements.forEach((pElement) => {
+                observer.observe(pElement);
+              });
+            }
+        
+            fetchNews();
+          </script>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <div>
+                    <img src="../homepage/logo.png" alt="" />
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li>
+                        <a href="../pageThree/index.html">Find A Doctor</a>
+                    </li>
+                    <li>
+                        <a href="../pageTwo/index.html">AI Diagnose</a>
+                    </li>
+                    <li><a href="../pageThree/index.html">Warning</a></li>
+                    <li><a href="../pageThree/index.html">Near You</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>News</h4>
+                <ul>
+                    <li><a href="#News">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="border1">
+                    <ul>
+                        <li>
+                            <i
+                                class="fa fa-phone"
+                                aria-hidden="true"
+                            ></i
+                            >01275383309
+                        </li>
+                        <li id="emailButton">
+                          <i
+                                class="fa fa-envelope"
+                                aria-hidden="true"
+                            ></i
+                            >aimedsolver@gmail.com
+                        </li>
+                    </ul>
+                    <script>
+                      const emailButton = document.getElementById("emailButton");
+              
+                      emailButton.addEventListener("click", function() {
+                          window.location.href = "mailto:aimedsolver@gmail.com";
+                      });
+                  </script>
+                </div>
+                <div class="social-links">
+                    <a
+                        href="https://www.facebook.com/profile.php?id=100094980720849"
+                        ><i
+                            class="fa fa-facebook"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                    <a href="#"
+                        ><i class="fa fa-twitter" aria-hidden="true"></i
+                    ></a>
+                    <a href="#"
+                        ><i
+                            class="fa fa-linkedin"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                    <a href="https://www.instagram.com/myaso.ai/"
+                        ><i
+                            class="fa fa-instagram"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
